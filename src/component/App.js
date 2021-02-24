@@ -38,6 +38,7 @@ class App extends React.Component {
 
   render() {
     console.log("RENDER");
+
     const { list, favourite, showFav } = this.props.store.getState();
 
     const showList = showFav ? favourite : list;
@@ -72,6 +73,9 @@ class App extends React.Component {
               );
             })}
           </div>
+          {showList.length === 0 ? (
+            <div className="no-movies">No Movies!</div>
+          ) : null}
         </div>
       </div>
     );
